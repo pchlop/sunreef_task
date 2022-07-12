@@ -11,10 +11,9 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class TestController extends AbstractController
 {
-    #[Route('/date')]
+    #[Route('/task_2')]
     public function date(DateService $dateService): Response
     {
-//        $dateService = $this->container->get('date');
         return new Response($dateService->getDate());
     }
 

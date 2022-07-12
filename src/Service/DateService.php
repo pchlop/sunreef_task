@@ -24,13 +24,15 @@ class DateService
     /**
      * @param string $env
      */
-    public function getDate(): DateTime
+    public function getDate(): string
     {
         if ($this->getEnv() == 'prod') {
-            return new DateTime();
+            $date = new DateTime();
         }
         else {
-            return new DateTime($_ENV['DATE']);
+            $date = new DateTime($_ENV['DATE']);
         }
+
+        return $date->format('Y-m-d');
     }
 }
